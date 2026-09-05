@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         // Initialize yt-dlp
         YoutubeDLInitializer.initialize(applicationContext)
+        startService(Intent(this, DownloadService::class.java))
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
