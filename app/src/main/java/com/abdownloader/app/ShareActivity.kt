@@ -7,6 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import com.abdownloader.app.databinding.DialogQualityPickerBinding
 import com.abdownloader.app.adapters.QualityAdapter
 import kotlinx.coroutines.launch
+import android.content.Intent
 
 class ShareActivity : AppCompatActivity() {
 
