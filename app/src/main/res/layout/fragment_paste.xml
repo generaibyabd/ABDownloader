@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="?attr/colorSurface">
+
+    <!-- App Name Heading -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginBottom="48dp" />
+
+    <!-- URL Input with Paste Icon -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Paste video URL"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_paste"
+        app:endIconTint="@color/accent_color"
+        android:layout_marginBottom="24dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textUri"
+            android:imeOptions="actionDone" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Download Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDownload"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Download"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/accent_color"
+        app:cornerRadius="28dp"
+        app:icon="@drawable/ic_download"
+        app:iconGravity="textStart"
+        android:layout_marginTop="8dp" />
+
+    <!-- Status TextView (for errors/info) -->
+    <TextView
+        android:id="@+id/txtStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginTop="24dp"
+        android:textSize="14sp" />
+
+</LinearLayout>
