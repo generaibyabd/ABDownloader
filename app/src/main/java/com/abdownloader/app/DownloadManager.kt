@@ -225,7 +225,13 @@ object DownloadManager {
             }
             
             // Save to Downloads folder
-            val downloadDir = context.getExternalFilesDir(null) ?: context.filesDir
+            val downloadDir = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+    // Android 10+ uses MediaStore (complex). For simplicity, fallback to app folder.
+    context.getExternalFilesDir(null) ?: context.filesDir
+} else {
+    // Android 9 and below can write to public Downloads
+    Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+}
             val outputPath = File(downloadDir, fileName).absolutePath
 
             // Build request
