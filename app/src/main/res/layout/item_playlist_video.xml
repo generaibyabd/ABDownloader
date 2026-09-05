@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="1dp"
+    android:layout_margin="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical"
+        android:background="?attr/colorSurface">
+
+        <!-- Thumbnail with Duration Badge -->
+        <FrameLayout
+            android:layout_width="96dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="8dp">
+
+            <ImageView
+                android:id="@+id/imgThumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:background="@android:drawable/ic_menu_camera" />
+
+            <!-- Duration Badge -->
+            <TextView
+                android:id="@+id/txtDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textSize="10sp"
+                android:textColor="@color/white"
+                android:background="@color/transparent_black_60"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="4dp" />
+
+        </FrameLayout>
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Video Title"
+            android:textSize="14sp"
+            android:textColor="?attr/colorOnSurface"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <!-- Checkbox -->
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:buttonTint="@color/accent_color" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
