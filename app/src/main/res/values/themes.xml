@@ -1,1 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme (default = Light) -->
+    <style name="Theme.ABDownloader" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/accent_color</item>
+        <item name="colorPrimaryVariant">@color/accent_color</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <!-- Secondary color -->
+        <item name="colorSecondary">@color/accent_color</item>
+        <item name="colorSecondaryVariant">@color/accent_color</item>
+        <item name="colorOnSecondary">@color/white</item>
+        
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/accent_color</item>
+        
+        <!-- Background (changes with day/night) -->
+        <item name="android:windowBackground">@color/light_background</item>
+        <item name="colorSurface">@color/light_surface</item>
+        <item name="colorOnSurface">@color/light_text_primary</item>
+    </style>
 
+    <!-- Overlay theme for ShareActivity (transparent background) -->
+    <style name="Theme.ABDownloader.Overlay" parent="Theme.ABDownloader">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/transparent_black_60</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <!-- Dark mode values (automatically applied by DayNight) -->
+    <!-- These are handled by the "Night" resource qualifier -->
+    <!-- We will create a separate values-night/themes.xml later -->
+</resources>
