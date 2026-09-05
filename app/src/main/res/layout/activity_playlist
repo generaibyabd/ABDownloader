@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/colorSurface">
+
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarPlaylist"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/accent_color"
+        app:title="Playlist"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:menu="@menu/playlist_menu" />
+
+    <!-- Select All / Deselect All button (inside toolbar or below) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:background="?attr/colorSurface">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Select videos to download"
+            android:textSize="14sp"
+            android:textColor="?attr/colorOnSurface" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSelectAll"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Select All"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/accent_color"
+            app:cornerRadius="20dp"
+            app:icon="@drawable/ic_select_all"
+            app:iconGravity="textStart" />
+
+    </LinearLayout>
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerPlaylist"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:clipToPadding="false" />
+
+    <!-- Bottom Download Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDownloadSelected"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Download Selected (0)"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/accent_color"
+        app:cornerRadius="0dp"
+        app:icon="@drawable/ic_download"
+        app:iconGravity="textStart" />
+
+</LinearLayout>
